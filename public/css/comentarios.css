@@ -1,0 +1,281 @@
+#comentarios {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+    position: relative;
+}
+
+.comentarios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: #B89D4F;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+.comentarios-wrapper {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Seção da Foto do Dentista */
+.dentist-photo-section {
+    position: sticky;
+    top: 120px;
+}
+
+.dentist-photo-container {
+    background: rgba(26, 26, 26, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(184, 157, 79, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.dentist-photo-container:hover {
+    border-color: rgba(184, 157, 79, 0.4);
+    transform: translateY(-5px);
+}
+
+.dentist-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(184, 157, 79, 0.5);
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 30px rgba(184, 157, 79, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dentist-photo:hover {
+    border-color: #B89D4F;
+    transform: scale(1.05);
+}
+
+.dentist-info h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.dentist-info p {
+    color: #B89D4F;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.dentist-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.dentist-specialties span {
+    background: rgba(184, 157, 79, 0.1);
+    color: #B89D4F;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    border: 1px solid rgba(184, 157, 79, 0.3);
+}
+
+/* Seção dos Cards de Depoimentos */
+.comentarios-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.comentario-card {
+    background: rgba(26, 26, 26, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(184, 157, 79, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.comentario-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, #B89D4F, #d4b85a);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.comentario-card:hover::before {
+    transform: scaleY(1);
+}
+
+.comentario-card:hover {
+    transform: translateX(10px);
+    border-color: rgba(184, 157, 79, 0.3);
+    background: rgba(184, 157, 79, 0.05);
+}
+
+.patient-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.patient-photo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    border: 2px solid rgba(184, 157, 79, 0.5);
+    transition: all 0.3s ease;
+}
+
+.patient-photo:hover {
+    border-color: #B89D4F;
+    transform: scale(1.1);
+}
+
+.patient-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.patient-details h3 {
+    margin: 0 0 5px 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.treatment {
+    display: block;
+    color: #B89D4F;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.rating {
+    color: #B89D4F;
+    font-size: 12px;
+}
+
+.rating i {
+    margin-right: 1px;
+}
+
+.comentario-text {
+    color: #cccccc;
+    line-height: 1.6;
+    font-style: italic;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .comentarios-wrapper {
+        grid-template-columns: 280px 1fr;
+        gap: 40px;
+    }
+    
+    .dentist-photo {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .comentarios-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .dentist-photo-section {
+        position: relative;
+        top: 0;
+    }
+    
+    .dentist-photo-container {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .section-title {
+        font-size: 1rem;
+    }
+    
+    .section-subtitle {
+        font-size: 2rem;
+    }
+    
+    .comentario-card {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #comentarios {
+        padding: 80px 15px;
+    }
+    
+    .dentist-photo {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .dentist-photo-container {
+        padding: 25px 20px;
+    }
+    
+    .comentario-card {
+        padding: 20px 15px;
+    }
+    
+    .patient-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .patient-photo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .section-title {
+        font-size: 0.9rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.8rem;
+    }
+}
